@@ -9,12 +9,12 @@ RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${HEADER}
+	@${CC} ${CFLAGS} -c @$< -o ${<:.c=.o} -I${HEADER}
 
 ${NAME}:
 	@${CC} ${CFLAGS} ${SRCS} -o ${NAME}
 
-all: ${NAME}
+all: @${NAME}
 
 clean:
 	@${RM} ${OBJS}
